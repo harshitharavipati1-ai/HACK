@@ -1,0 +1,19 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.11, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\Rkuma\OneDrive\Desktop\hack
+plugins: anyio-4.12.1, langsmith-0.7.3
+collected 7 items
+
+backend\tests\test_incidents.py .......                                  [100%]Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001A1E4A96C10>
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001A1E4A95310>
+
+
+============================== warnings summary ===============================
+backend/tests/test_incidents.py::test_resolve_incident
+  C:\Users\Rkuma\OneDrive\Desktop\hack\backend\app\routers\incidents.py:259: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    inc.resolved_at = datetime.utcnow()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 7 passed, 1 warning in 21.22s ========================

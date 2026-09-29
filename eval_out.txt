@@ -1,0 +1,35 @@
+============================================================
+ INCIDENT MEMORY AGENT - EVALUATION HARNESS BENCHMARK
+============================================================
+
+Sample Size: 5 held-out incidents
+Memory Provider: Local Demo Fallback
+
+METRIC                              | MEMORY OFF      | MEMORY ON      
+----------------------------------------------------------------------
+Top-1 Root Cause Match Rate         | 0.0           % | 100.0         %
+Correct Fix Inclusion Rate          | 20.0          % | 100.0         %
+Recall@k Relevant Memories          | 0.0           % | 100.0         %
+======================================================================
+
+DETAILED INCIDENT RESULTS:
+ - [EVAL-2026-001] Checkout Gateway Connection Pool Starvation
+   Ground Truth: connection_pool_exhaustion
+   Memory OFF  -> Match: False, Fix: True
+   Memory ON   -> Match: True, Fix: True, Recalled: 5
+ - [EVAL-2026-002] Auth Token Validator Redis Maxmemory Error
+   Ground Truth: redis_memory_oom
+   Memory OFF  -> Match: False, Fix: False
+   Memory ON   -> Match: True, Fix: True, Recalled: 5
+ - [EVAL-2026-003] API Gateway Token Verification Signature Expired
+   Ground Truth: oauth_key_rotation
+   Memory OFF  -> Match: False, Fix: False
+   Memory ON   -> Match: True, Fix: True, Recalled: 5
+ - [EVAL-2026-004] Order Notification Queue Consumer Lag Spike
+   Ground Truth: kafka_consumer_lag
+   Memory OFF  -> Match: False, Fix: False
+   Memory ON   -> Match: True, Fix: True, Recalled: 5
+ - [EVAL-2026-005] Customer Transactions Report Heavy Query Timeout
+   Ground Truth: slow_query_lock
+   Memory OFF  -> Match: False, Fix: False
+   Memory ON   -> Match: True, Fix: True, Recalled: 5
